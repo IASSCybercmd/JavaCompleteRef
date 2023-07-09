@@ -26,6 +26,8 @@ public class AnnotationsBasic {
 
                 //Now get a method object that represents this method.
                 Method m = c.getMethod("myMeth");
+            }catch(Exception e){
+                e.getStackTrace();
             }
         }
     
