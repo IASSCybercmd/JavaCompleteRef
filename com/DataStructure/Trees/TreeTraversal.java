@@ -9,7 +9,6 @@ package com.DataStructure.Trees;
  * 
  * @author Priyanshu Raj
  * @version 5 July 2023
- * @see Reference1
  */
 
  //This is the Node of the Tree.

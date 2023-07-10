@@ -11,7 +11,6 @@ package com.DataStructure.Arrays;
  * 
  * @author PRIYANSHU RAJ
  * @category Medium lvl
- * @see https://takeuforward.org/data-structure/stock-buy-and-sell/
  * 
  */
 public class StockBuySell{
@@ -20,7 +19,7 @@ public class StockBuySell{
     public static int maxStockBenefit(int[] prices) {
         int minPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
-        
+
         for (int i = 0; i < prices.length; i++) {
             //checking for min value
             if(prices[i] < minPrice){
