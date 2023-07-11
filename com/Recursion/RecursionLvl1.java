@@ -151,6 +151,46 @@ public class RecursionLvl1 {
         }
     }
 
+
+    /*              >> Ques 9 <<              */
+    /**
+     * This method is used to calculate total number of zeroes in a nubmer.
+     * @param num
+     * @return  Total number of zeroes.
+     */
+    public int countZeros(int num){
+        if(num < 10){
+            if(num == 0)
+                return 1;
+            else
+                return 0;
+        }else if((num % 10) == 0){
+            return (1+countZeros(num/10));
+        }else{
+            return countZeros(num/10);
+        }
+    }
+
+
+    /*              >> Ques 9 <<              */
+    /**
+     * This method calculates the total nubmers of steps required to make a number zero.
+     * @param num
+     * @return  Total number of steps required.
+     */
+    public int numOfSteps(int num){
+        if(num == 0){
+            return 0;
+        }
+        
+        //either use else if or use simple if else no problem in both(but else if looks cool and concise.)
+        if(num%2 == 0){
+            return (1+numOfSteps(num/2));
+        }else{
+            return (1+numOfSteps(num-1));
+        }
+    }
+
     public static void main(String[] args) {
         RecursionLvl1 obj = new RecursionLvl1();
         System.out.println("Ans 1");
@@ -181,5 +221,11 @@ public class RecursionLvl1 {
         System.out.println("Ans 9 : Checking palindrome2...");
         if(obj.checkPalindrome2(78987)) System.out.println("It's palindrome");
         else System.out.println("Not a palindrome");
+
+        System.out.println("Ans 10 : Counting total zeros in a digit");
+        System.out.println(obj.countZeros(80203032));
+
+        System.out.println("Ans 11 : Calculate total number of steps req to make a number to zero.");
+        System.out.println(obj.numOfSteps(8));
     }
 }
