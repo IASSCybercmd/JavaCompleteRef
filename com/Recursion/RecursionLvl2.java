@@ -1,5 +1,7 @@
 package com.Recursion;
 
+import java.util.ArrayList;
+
 /***
  * This code file contains different question related to java Arrays- Recursion topic.
  * ref: https://youtu.be/sTdiMLom00U
@@ -26,7 +28,13 @@ public class RecursionLvl2 {
         return false;
     }
 
-   
+   /**
+    * This method checks whether an key is present in the array or not.
+    * @param arr    Array in which we're doing the search.
+    * @param key    Element to search for.
+    * @param idx    Current index position that's being checked.
+    * @return       Boolean value if the element is present or not.
+    */
     public static boolean linearRecurSearch(int arr[], int key, int idx) {
     if (idx == arr.length) {
         return false;
@@ -35,6 +43,31 @@ public class RecursionLvl2 {
     }
 
     return linearRecurSearch(arr, key, idx + 1);
+    }
+
+
+    /**
+     * This method return all the index at which the key was spotted.
+     * @param arr    Array in which we're doing the search.
+     * @param key    Element to search for.
+     * @param idx    Current index position that's being checked.
+     * @return       Return the Arraylist containing all the index.
+     */
+   public static ArrayList<Integer> findAllIndex(int arr[], int key, int idx) {
+    ArrayList<Integer> allIndex = new ArrayList<>(); // Declare the ArrayList here
+
+    if (idx == arr.length) {
+        return allIndex; // Return the ArrayList when the traversal is complete
+    }
+
+    if (arr[idx] == key) {
+        allIndex.add(idx);
+    }
+
+    // Recursively call the method and combine the results
+    allIndex.addAll(findAllIndex(arr, key, idx + 1));
+    
+    return allIndex; // Return the updated ArrayList
 }
 
 
@@ -46,7 +79,8 @@ public class RecursionLvl2 {
             System.out.println("No, Arrays isn't sorted...");
 
         
-        System.out.println(linearRecurSearch(arr, 3, 0));
+        System.out.println(linearRecurSearch(arr, 2, 0));
+        
         
             
     }
