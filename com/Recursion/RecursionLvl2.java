@@ -67,7 +67,7 @@ public class RecursionLvl2 {
     // Recursively call the method and combine the results
     allIndex.addAll(findAllIndex(arr, key, idx + 1));
     
-    return allIndex; // Return the updated ArrayList
+    return allIndex; // Return the updated ArrayList to the calling statement
 }
 
 
