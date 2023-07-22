@@ -179,7 +179,7 @@ public class BinarySearchTree {
             return search(node.right, key);
         }
 
-        // Key is smaller than root's key, so search in the left subtree
+        // Key is smaller than root's key, so search in the left subtree.
         return search(node.left, key);
     }
 
