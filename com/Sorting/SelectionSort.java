@@ -5,6 +5,25 @@ package com.Sorting;
  */
 public class SelectionSort {
 
+
+    public void quickRev(int arr[]) {
+        int size = arr.length;
+
+        for (int i = 0; i < size-1; i++) {
+            //Phase 1: find smallest
+            int minIdx = i;
+            for (int j = i+1; j < size; j++) {
+                if(arr[j] < arr[minIdx])
+                    minIdx = j;
+            }
+
+            // Phase 2: Swap `Min` and `ith` element, if both are different
+            if(minIdx != i){
+                arr[i] = arr[i] ^ arr[minIdx] ^ (arr[minIdx] = arr[i]);
+            }
+        }
+        
+    }
     /**
      * Sorts the given array using the Selection Sort algorithm.
      *
@@ -18,6 +37,8 @@ public class SelectionSort {
 
             // Phase 1: Find the index of the smallest element in the unsorted part of the array
             int minIdx = i; // Assume the current element is the smallest
+            
+            //Start comparing from i+1th element till last.
             for (int j = i + 1; j < size; j++) {
                 if (arr[j] < arr[minIdx]) {         // To do desc sorting, change < to >
                     minIdx = j; 
@@ -48,7 +69,7 @@ public class SelectionSort {
             System.out.print(num + " ");
         }
 
-        selectionSort.selectionSort(arr);
+        selectionSort.quickRev(arr);
 
         System.out.println("\nSorted Array:");
         for (int num : arr) {
