@@ -23,7 +23,7 @@ public class CircularLinkedList {
      * This is a special method that is used to add node to linked list if 
      * it don't have any element.
      * 
-     * @param last  Address of th lastNode 
+     * @param last  Address of the lastNode 
      * @param data  The data that needs to be inserted.
      * @return      Returns the object lastnode.
      */
