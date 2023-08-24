@@ -5,6 +5,23 @@ package com.Sorting;
  */
 public class BubbleSort {
 
+    /* Short implementation of same code below without explanations */
+    public void cleanCode(int arr[]) {
+        int size = arr.length;
+
+        for (int i = 0; i < (size-1); i++) {
+            Boolean swapped = false;
+
+            for (int j = 0; j < size-i-1; j++) {
+                if(arr[i] > arr[i+1])
+                    arr[j] = arr[j] ^ arr[j+1] ^ ( arr[j+1] = arr[j]);
+                swapped = true;
+            }
+            if(!swapped)
+                break;
+        }
+    }
+
     /**
      * Sorts the given array using the Bubble Sort algorithm.
      *
