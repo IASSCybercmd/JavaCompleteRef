@@ -1,7 +1,7 @@
 Yes, you can assign `null` to the root node without using a constructor in the
 `BinaryTree` class. Here's an alternative way to initialize the root node without a constructor:
 
-```
+```java
 class BinaryTree {
   Node root = null;
   

@@ -13,7 +13,7 @@ public class BubbleSort {
             Boolean swapped = false;
 
             for (int j = 0; j < size-i-1; j++) {
-                if(arr[i] > arr[i+1])
+                if(arr[j] > arr[j+1])
                     arr[j] = arr[j] ^ arr[j+1] ^ ( arr[j+1] = arr[j]);
                 swapped = true;
             }
